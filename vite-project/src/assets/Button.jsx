@@ -1,4 +1,4 @@
-export function Button(){
+export function Button(props){
    let number = 7
    let displayString
 
@@ -9,8 +9,8 @@ export function Button(){
    }
     
     return(
-        <button>
-            <p>{displayString}</p>
+        <button onClick={() => props.func(props.msg)} style = {{backgroundColor: props.color}}>
+            <p>{props.text}</p>
         </button>
     )
 }
