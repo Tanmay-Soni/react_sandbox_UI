@@ -1,12 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 
 export function Textbox(){
-    const[text, setText] = useState("")
+    const[num, setNum] = useState(0)
+
+    function handleEvent(){
+        setNum(num + 1)
+        console.log("The number just got incremented by 1")
+    }
+
+    useEffect(() => {
+        console.log(num)
+    }, [num])
 
     return (
         <>
-            <input onChange={(e) => setText(e.target.value)}></input>
-            <p>{text}</p>
+            <button onClick={() => handleEvent()} style={{backgroundColor: "Red"}}>
+                {num}
+            </button>
         </>
     )
 }
