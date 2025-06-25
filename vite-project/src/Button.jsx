@@ -1,12 +1,10 @@
 import { useState } from "react"
 
-export function Button({color}){
-
-    const [count, setCount] = useState(0)
+export function Button({show, setShow, color}){
     
     return(
-        <button onClick={() => setCount(count + 1)} style = {{backgroundColor: color}}>
-            <p>{count}</p>
+        <button onClick={() => setShow(!show)} style = {{backgroundColor: color}}>
+            <p>{show == true ? "Hide Item" : "Show Item"}</p>
         </button>
     )
 }

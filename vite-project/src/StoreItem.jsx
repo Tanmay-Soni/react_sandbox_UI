@@ -1,4 +1,4 @@
-export function StoreIterm({item}){
+export function StoreItem({item}){
 
     return(
         <>
